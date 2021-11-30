@@ -11,7 +11,6 @@ module.exports = function (TABLE) {
     try {
       // get new game items
       const games = await gameScrapper54.getGames();
-      console.log(games)
       await knex("Game").truncate();
       await knex.batchInsert("Game", games, 30);
       // done

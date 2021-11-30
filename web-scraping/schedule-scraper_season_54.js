@@ -35,11 +35,7 @@ NOTE: assume server timezone eastern (GMT-400) for Date
 */
 const getDateValue = (date, time) => {
   // set date
-  const [monthName, monthDayString] = date.split(" ");
-  const monthValue = MONTHS.get(monthName);
-  const dateValue = parseInt(monthDayString, 10);
-  const year = monthValue === 0 ? 2022 : 2021;
-
+  const [year, monthValue, dateValue] = date.split("-");
   // set time
   let hours = Number(time.match(/^(\d+)/)[1]);
   const minutes = Number(time.match(/:(\d+)/)[1]);
@@ -79,7 +75,7 @@ const scrapeGamesTable = async () => {
   const $ = cheerio.load(result);
   cheerioTableparser($);
   const resultTable = $(
-    "body > #wrap > #content > #all_games > div > #div_games"
+    "body > #wrap > #content > #all_games > #div_games"
   );
   const parsedTable = resultTable.parsetable();
   return parsedTable;
