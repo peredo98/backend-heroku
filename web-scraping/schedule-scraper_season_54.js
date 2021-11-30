@@ -38,7 +38,7 @@ const getDateValue = (date, time) => {
   const [monthName, monthDayString] = date.split(" ");
   const monthValue = MONTHS.get(monthName);
   const dateValue = parseInt(monthDayString, 10);
-  const year = monthValue === 0 ? 2021 : 2020;
+  const year = monthValue === 0 ? 2022 : 2021;
 
   // set time
   let hours = Number(time.match(/^(\d+)/)[1]);
@@ -74,7 +74,7 @@ const getGamesListFromTable = (table) => {
 
 const scrapeGamesTable = async () => {
   const result = await request.get(
-    "https://www.pro-football-reference.com/years/2020/games.htm"
+    "https://www.pro-football-reference.com/years/2021/games.htm"
   );
   const $ = cheerio.load(result);
   cheerioTableparser($);
