@@ -110,12 +110,40 @@ knex.schema
           table.integer("numOfLossPlayoff").defaultTo(0);
           table.integer("numOfTiePlayoff").defaultTo(0);
           table.integer("scorePlayoff").defaultTo(0);
-          for (var i = 1; i < 18; i++) {
-            let alphabet = ['A', 'B', 'C', 'D', 'E', 'F']
-            alphabet.map((letter) => {
-              table.string(`wk${i}${letter}`); 
-            })
-          }
+          table.string("wk1A");
+          table.string("wk1B");
+          table.string("wk2A");
+          table.string("wk2B");
+          table.string("wk3A");
+          table.string("wk3B");
+          table.string("wk4A");
+          table.string("wk4B");
+          table.string("wk5A");
+          table.string("wk5B");
+          table.string("wk6A");
+          table.string("wk6B");
+          table.string("wk7A");
+          table.string("wk7B");
+          table.string("wk8A");
+          table.string("wk8B");
+          table.string("wk9A");
+          table.string("wk9B");
+          table.string("wk10A");
+          table.string("wk10B");
+          table.string("wk11A");
+          table.string("wk11B");
+          table.string("wk12A");
+          table.string("wk12B");
+          table.string("wk13A");
+          table.string("wk13B");
+          table.string("wk14A");
+          table.string("wk14B");
+          table.string("wk15A");
+          table.string("wk15B");
+          table.string("wk16A");
+          table.string("wk16B");
+          table.string("wk17A");
+          table.string("wk17B");
           table.string("wk18A");
           table.string("wk18B");
           table.string("wk18C");
