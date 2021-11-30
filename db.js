@@ -3,7 +3,10 @@ const path = require("path");
 // Create connection to Postges database
 const knex = require("knex")({
   client: "pg",
-  connection: process.env.DATABASE_URL,
+  connection: {
+    connectionString: process.env.DATABASE_URL,
+    ssl: false
+  },
   useNullAsDefault: true,
 });
 
