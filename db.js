@@ -110,7 +110,7 @@ knex.schema
           table.integer("numOfLossPlayoff").defaultTo(0);
           table.integer("numOfTiePlayoff").defaultTo(0);
           table.integer("scorePlayoff").defaultTo(0);
-          for (i = 1; i < 18; i++) {
+          for (var i = 1; i < 18; i++) {
             let alphabet = ['A', 'B', 'C', 'D', 'E', 'F']
             alphabet.map((letter) => {
               table.string(`wk${i}${letter}`); 
