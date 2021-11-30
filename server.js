@@ -10,6 +10,8 @@ const infoRouter = require("./routes/info-route");
 const gameRouter = require("./routes/generic-route")("Game");
 const teamRouter = require("./routes/generic-route")("Team");
 const userRouter = require("./routes/generic-route")("User");
+
+require('dotenv').config()
 // Set default port for express app
 const PORT = process.env.PORT || 3001;
 console.log("NODE_ENV BACKEND : ", process.env.NODE_ENV);
@@ -40,4 +42,5 @@ app.use(function (req, res, next) {
 // Start express app
 app.listen(PORT, function () {
   console.log(`Server is running on: ${PORT}`);
+  console.log(process.env.DATABASE_URL);
 });
