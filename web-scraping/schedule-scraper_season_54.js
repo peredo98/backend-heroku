@@ -35,16 +35,9 @@ NOTE: assume server timezone eastern (GMT-400) for Date
 */
 const getDateValue = (date, time) => {
   // set date
-  const [year, monthValue, dateValue] = date.split("-");
-  // set time
-  let hours = Number(time.match(/^(\d+)/)[1]);
-  const minutes = Number(time.match(/:(\d+)/)[1]);
-  const AMPM = time.substring(time.length - 2);
-  if (AMPM == "PM" && hours < 12) hours = hours + 12;
-  if (AMPM == "AM" && hours == 12) hours = hours - 12;
-
-  const dateObj = new Date(year, monthValue, dateValue, hours, minutes);
-  return dateObj.valueOf();
+  let meridian = time.slice(-2);
+  let dateObj = date + ' ' + time.split(meridian)[0] + ' ' + meridian;
+  return dateObj;
 };
 
 const getGamesListFromTable = (table) => {
