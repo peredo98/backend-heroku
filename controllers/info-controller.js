@@ -1,7 +1,7 @@
 const knex = require("../db");
 
 exports.getKickoffDate = async (req, res) => {
-  knex("game")
+  knex("Game")
     .orderBy("startTime", "asc")
     .first("startTime")
     .then((data) => {
